@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KoalaMiner</title>
+<style>
+body{margin:0;background:#101713;color:#f2f7f2;font-family:Arial,sans-serif;text-align:center;padding:24px 16px}
+h1{color:#a7f36a}
+.card{max-width:360px;margin:20px auto;background:#1b2720;border:1px solid #304536;border-radius:18px;padding:20px}
+#koala{font-size:100px;border:0;border-radius:50%;background:#263c2b;width:180px;height:180px;cursor:pointer}
+button{cursor:pointer}
+.points{font-size:28px;font-weight:bold;margin:12px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:360px;margin:20px auto}
+.menu div{background:#1b2720;padding:16px 8px;border-radius:12px}
+small{color:#a5b4a8}
+</style>
+</head>
+<body>
+<h1>🐨 KoalaMiner</h1>
+<p><small>Tap, collect and climb the leaderboard</small></p>
+<div class="card">
+<p>Your Points</p>
+<div class="points" id="points">0</div>
+<button id="koala" aria-label="Mine points">🐨</button>
+<p><small>Tap the koala to mine!</small></p>
+<p>Energy: <span id="energy">100</span>/100</p>
+</div>
+<div class="menu">
+<div>👤<br>Profile</div>
+<div>🏆<br>Leaderboard</div>
+<div>🎁<br>Missions</div>
+<div>⚡<br>Boost</div>
+<div>💼<br>Wallet</div>
+<div>📊<br>Statistics</div>
+</div>
+<script>
+let points=0,energy=100;
+document.getElementById('koala').onclick=()=>{
+if(energy<=0){alert('No energy left!');return;}
+points++;
+energy--;
+document.getElementById('points').textContent=points;
+document.getElementById('energy').textContent=energy;
+};
+</script>
+</body>
+</html>
